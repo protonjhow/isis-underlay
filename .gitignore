@@ -2,3 +2,4 @@ clab-isis-underlay
 .isis-underlay.yml.bak
 venv
 .venv
+ansible-inventory.yml
