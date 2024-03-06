@@ -1,0 +1,13 @@
+---
+underlay:
+  isis:
+    iso_base: 49.0001
+  export-policy: underlay-loopback-out
+  import-policy: underlay-loopback-in
+overlay:
+  asn: 64999
+timers:
+  connect-retry: 1
+  hold-time: 9
+  keepalive-interval: 3
+  minimum-advertisement-interval: 1
