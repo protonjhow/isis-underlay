@@ -29,6 +29,6 @@ redeploy: ## redeploy full topology
 	poetry run python3 scripts/push_fabric_configs.py
 
 run-tests: ## Run test
-	python3 test_fabric_interfaces.py
-	python3 test_fabric_underlay.py
-	python3 test_fabric_overlay.py
+	python3 tests/test_fabric_interfaces.py
+	python3 tests/test_fabric_underlay.py
+	python3 tests/test_fabric_overlay.py
