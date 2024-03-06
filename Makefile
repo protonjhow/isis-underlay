@@ -4,7 +4,6 @@
 
 .PHONY: help deploy destroy run-tests
 
-TESTS := $(shell find ./ci/ -name '*.sh')
 spines := spine1,spine2
 leaves := leaf1,leaf2,leaf3,leaf4
 
@@ -21,15 +20,15 @@ destroy: ## Destroy full topology
 	sudo clab destroy --topo isis-underlay.yml --cleanup
 	rm ansible-inventory.yml
 
-redeploy: 
+redeploy: ## redeploy full topology
 	sudo clab destroy --topo isis-underlay.yml --cleanup
 	rm ansible-inventory.yml
 	sudo clab deploy --topo isis-underlay.yml --reconfigure 
 	cp clab-isis-underlay/ansible-inventory.yml .
 	#./config_servers.sh && sleep 5 # Give system some time to settle
 	poetry run python3 scripts/push_fabric_configs.py
-	
-run-tests: $(TESTS) ## Run test
+
+run-tests: ## Run test
 	python3 test_fabric_interfaces.py
 	python3 test_fabric_underlay.py
 	python3 test_fabric_overlay.py
