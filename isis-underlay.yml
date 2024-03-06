@@ -1,0 +1,65 @@
+name: isis-underlay
+prefix: null
+mgmt: {}
+settings: null
+topology:
+  kinds:
+    srl:
+      image: ghcr.io/nokia/srlinux:23.10.2
+      type: ixrd2l
+  nodes:
+    leaf1:
+      kind: srl
+      group: leaf
+    leaf2:
+      kind: srl
+      group: leaf
+    leaf3:
+      kind: srl
+      group: leaf
+    leaf4:
+      kind: srl
+      group: leaf
+    spine1:
+      kind: srl
+      group: spine
+      type: ixrd3l
+    spine2:
+      kind: srl
+      group: spine
+      type: ixrd3l
+  links:
+  - endpoints:
+    - leaf1:e1-49
+    - spine1:e1-1
+    deploymentstate: 0
+  - endpoints:
+    - leaf1:e1-50
+    - spine2:e1-1
+    deploymentstate: 0
+  - endpoints:
+    - leaf2:e1-49
+    - spine1:e1-2
+    deploymentstate: 0
+  - endpoints:
+    - leaf2:e1-50
+    - spine2:e1-2
+    deploymentstate: 0
+  - endpoints:
+    - leaf3:e1-49
+    - spine1:e1-3
+    deploymentstate: 0
+  - endpoints:
+    - leaf3:e1-50
+    - spine2:e1-3
+    deploymentstate: 0
+  - endpoints:
+    - leaf4:e1-49
+    - spine1:e1-4
+    deploymentstate: 0
+  - endpoints:
+    - leaf4:e1-50
+    - spine2:e1-4
+    deploymentstate: 0
+debug: false
+
