@@ -7,27 +7,41 @@ topology:
     srl:
       image: ghcr.io/nokia/srlinux:23.10.2
       type: ixrd2l
+      labels:
+        ansible-no-host-var: "true"
   nodes:
     leaf1:
       kind: srl
       group: leaf
+      labels:
+        ansible-group: leaf
     leaf2:
       kind: srl
       group: leaf
+      labels:
+        ansible-group: leaf
     leaf3:
       kind: srl
       group: leaf
+      labels:
+        ansible-group: leaf
     leaf4:
       kind: srl
       group: leaf
+      labels:
+        ansible-group: leaf
     spine1:
       kind: srl
       group: spine
       type: ixrd3l
+      labels:
+        ansible-group: spine
     spine2:
       kind: srl
       group: spine
       type: ixrd3l
+      labels:
+        ansible-group: spine
   links:
   - endpoints:
     - leaf1:e1-49
