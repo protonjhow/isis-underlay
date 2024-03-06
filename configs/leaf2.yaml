@@ -1,0 +1,20 @@
+---
+interface:
+  - name: system0
+    admin-state: enable
+    subinterface:
+      - index: 0
+        admin-state: enable
+        ipv4:
+          admin-state: enable
+          address:
+            - ip-prefix: 169.254.1.2/32
+
+network-instance:
+  - name: default
+    protocols:
+      isis:
+        instance:
+          - name: underlay
+            net:
+              - 49.0001.0000.0000.1002.00
