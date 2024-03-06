@@ -30,5 +30,5 @@ redeploy: ## redeploy full topology
 
 run-tests: ## Run test
 	python3 tests/test_fabric_interfaces.py
-	python3 tests/test_fabric_underlay.py
+	python3 tests/test_fabric_isis_adjacencies.py
 	python3 tests/test_fabric_overlay.py
