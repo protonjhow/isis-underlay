@@ -3,3 +3,4 @@ clab-isis-underlay
 venv
 .venv
 ansible-inventory.yml
+nornir.log
