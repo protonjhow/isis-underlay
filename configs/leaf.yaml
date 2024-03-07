@@ -1,4 +1,9 @@
 ---
+routing-policy:
+  policy:
+    - name: all
+      default-action:
+        policy-result: accept
 interface:
   - name: ethernet-1/49
     admin-state: enable
